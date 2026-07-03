@@ -219,6 +219,7 @@ impl Danmakw {
         let mut renderer = self.imp().renderer.borrow_mut();
         renderer.scale_factor = self.scale_factor() as f64;
         renderer.rebuild_visible_state_at(&self.pango_context(), self.width() as f32, time_milis);
+        self.queue_draw();
     }
 
     fn cb(&self, frame_clock: &FrameClock) -> glib::ControlFlow {

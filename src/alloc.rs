@@ -381,9 +381,7 @@ impl DanmakwRenderer {
         let reach_edge_time = width / velocity_x.abs();
         let spacing = self.spacing;
 
-        let target_row = if let Some(row) =
-            self.find_scroll_row(width, reach_edge_time, spacing)
-        {
+        let target_row = if let Some(row) = self.find_scroll_row(width, reach_edge_time, spacing) {
             row
         } else if self.allow_overlay {
             let row = self.overlay_scroll_hint % self.scroll_max_rows;
@@ -661,7 +659,7 @@ impl DanmakwRenderer {
         let raw_dpi = pangocairo::functions::context_get_resolution(context);
         let dpi = if raw_dpi > 0.0 { raw_dpi } else { 96.0 };
 
-        let font_px_device = if self.cached_metrics.as_ref().map_or(true, |m| {
+        let font_px_device = if self.cached_metrics.as_ref().is_none_or(|m| {
             m.is_stale(self.font_size, dpi, self.scale_factor, self.spacing_factor)
         }) {
             let m =
