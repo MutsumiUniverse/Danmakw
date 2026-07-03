@@ -1,0 +1,15 @@
+[package]
+name = "danmakw"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+gtk = { version = "0.11", package = "gtk4", features = ["v4_22"] }
+glib = "0.22"
+quick-xml = { version = "0.41", features = ["serialize"] }
+mutsumi-prelude = { git = "https://github.com/MutsumiUniverse/Mutsumi-Prelude.git" }
+pango = "0.22"
+pangocairo = "0.22"
+thiserror = "2.0.18"
+cairo-rs = "0.22"
+flume = "0.12"
