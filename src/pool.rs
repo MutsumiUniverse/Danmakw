@@ -152,6 +152,11 @@ impl Danmakw {
         glib::Object::new()
     }
 
+    pub fn clear_danmaku(&self) {
+        let mut renderer = self.imp().renderer.borrow_mut();
+        renderer.clear_danmaku();
+    }
+
     pub fn add_danmaku(&self, text: &str) {
         self.add_danmaku_full(text, Color::default(), DanmakuMode::Scroll);
     }
