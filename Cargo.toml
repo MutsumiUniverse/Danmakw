@@ -2,12 +2,14 @@
 name = "danmakw"
 version = "0.1.0"
 edition = "2024"
+license = "MIT"
+description = "A danmaku engine for gtk4"
 
 [dependencies]
 gtk = { version = "0.11", package = "gtk4", features = ["v4_22"] }
 glib = "0.22"
 quick-xml = { version = "0.41", features = ["serialize"] }
-mutsumi-prelude = { git = "https://github.com/MutsumiUniverse/Mutsumi-Prelude.git" }
+mutsumi-prelude = "0.1"
 pango = "0.22"
 pangocairo = "0.22"
 thiserror = "2.0.18"
